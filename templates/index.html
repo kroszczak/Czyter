@@ -1,0 +1,55 @@
+<html>
+   <head>
+      <style>
+
+         body{
+            background-color: #333;
+            font-size: 32px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #f7f7f7;
+            position: relative;
+
+         }
+
+         #result{
+            position: relative;
+            transform: translateY(25vh);
+            width: 100vw;
+            margin: auto;
+            text-align: center;
+            font-weight: 700;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <form enctype="multipart/form-data" action="/" method="POST">
+          <input type="file" id="myFile" name="file">
+          <button>submit</button>
+      </form>
+      <div id="result">
+         {{result}}
+      </div>
+   </body>
+   <script>
+   
+	let content = document.querySelector('#result').innerHTML;
+   document.querySelector('#result').innerHTML = "";
+   content = content.split(' ');
+
+   console.log(content);
+   document.querySelector('#result').innerHTML = content;
+   let i = 0;
+   setInterval(() => {
+         document.querySelector('#result').innerHTML = content[i];
+         i+=1;
+         // document.querySelector('#result').innerHTML += ' ' + content[i];
+         // i+=1;
+         // document.querySelector('#result').innerHTML += ' ' + content[i];
+         // i+=1; jak chcesz miec wiecej słów
+       
+   }, 170)//the sP33d 🚗
+
+
+</script>
+</html>
